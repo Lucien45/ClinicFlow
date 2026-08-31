@@ -7,11 +7,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-enum Role {
-    USER,
-    ADMIN,
-    DOCTOR
-}
+// public enum Role {
+//     USER,
+//     ADMIN,
+//     DOCTOR
+// }
 
 @Entity
 @Table(name = "users")

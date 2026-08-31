@@ -1,10 +1,6 @@
 package com.example.backend.user.dto;
 
-enum Role {
-    USER,
-    ADMIN,
-    DOCTOR
-}
+import com.example.backend.user.entity.Role;
 
 public class UserCreateDto {
     private String firstName;

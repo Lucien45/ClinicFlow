@@ -3,10 +3,10 @@ package com.example.backend.user.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.backend.user.dto.UserCreateDto;
-import com.example.backend.user.dto.UserDto;
 import com.example.backend.user.entity.User;
 import com.example.backend.user.repository.UserRepository;
 
@@ -14,9 +14,11 @@ import com.example.backend.user.repository.UserRepository;
 public class UserService {
     
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public List<User> findall() {
@@ -27,9 +29,6 @@ public class UserService {
         return userRepository.findById(id);
     }
  
-    // public User save(User user) {
-    //     return userRepository.save(user);
-    // }
     public void createUser(UserCreateDto userCreateDto) {
         User user = toEntity(userCreateDto);
         userRepository.save(user);
@@ -56,7 +55,8 @@ public class UserService {
         user.setFirstName(userCreateDto.getFirstName());
         user.setLastName(userCreateDto.getLastName());
         user.setEmail(userCreateDto.getEmail());
-        user.setPassword(userCreateDto.getPassword());
+        user.setPassword(passwordEncoder.encode(userCreateDto.getPassword()));
+        user.setRole(userCreateDto.getRole());
         return user;
     }
     
