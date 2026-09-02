@@ -3,8 +3,6 @@ package com.example.backend.doctor.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.backend.appointment.dto.AppointmentCreateDto;
-import com.example.backend.appointment.entity.Appointment;
 import com.example.backend.doctor.dto.DoctorAvailabilityCreateDto;
 import com.example.backend.doctor.entity.DoctorAvailability;
 import com.example.backend.doctor.service.DoctorAvailabilityService;
@@ -17,10 +15,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PutMapping;
 
 
 
