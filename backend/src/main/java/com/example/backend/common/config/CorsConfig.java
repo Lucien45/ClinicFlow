@@ -1,4 +1,4 @@
-package com.example.backend.common;
+package com.example.backend.common.config;
 
 import java.util.Arrays;
 import java.util.List;
